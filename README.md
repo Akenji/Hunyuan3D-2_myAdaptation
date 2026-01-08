@@ -1,6 +1,54 @@
 [中文阅读](README_zh_cn.md)
 [日本語で読む](README_ja_jp.md)
 
+---
+
+## 🛠️ My Adaptation Notes
+
+This is my adaptation of the amazing [Hunyuan3D-2.0](https://github.com/Tencent/Hunyuan3D-2) project by Tencent. After a journey through dependency hell, CUDA complications, and virtual environment adventures, I've managed to get it partially working! 
+
+### What Works ✅
+- **Shape generation** - Successfully generating 3D meshes from images using the Hunyuan3D-DiT model
+- **Gradio web interface** - Running smoothly on `http://localhost:8080`
+- **CUDA acceleration** - PyTorch 2.9.1+cu130 playing nicely with my NVIDIA T600
+
+### What Doesn't Work (Yet) ❌
+- **Texture generation** - The `custom_rasterizer` C++ extension refuses to compile without Visual Studio Build Tools and CUDA Toolkit properly installed
+- **Full pipeline** - Can only generate bare meshes without textures
+
+### My Setup Constraints 
+**The GPU Situation:** I'm rocking an NVIDIA T600 Laptop GPU with a whopping 4GB of VRAM. The README cheerfully suggests 6GB minimum for shape generation, but we're out here living dangerously with `--low_vram_mode` and the smaller `Hunyuan3D-2mini` model. It's like trying to fit a luxury sedan in a compact parking spot - technically possible with enough determination and the right flags. 🚗💨
+
+### How I Got It Running
+
+1. **PyTorch Installation:**
+   ```bash
+   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu130
+   ```
+
+2. **Basic requirements:**
+   ```bash
+   pip install -r requirements.txt
+   pip install -e .
+   ```
+
+3. **Launch the app:**
+   ```bash
+   python gradio_app.py --model_path tencent/Hunyuan3D-2mini --subfolder hunyuan3d-dit-v2-mini --texgen_model_path tencent/Hunyuan3D-2 --low_vram_mode
+   ```
+
+### TODO
+- [ ] Install Visual Studio Build Tools
+- [ ] Install CUDA Toolkit 13.0
+- [ ] Compile the C++ extensions for texture generation
+- [ ] Upgrade GPU (in my dreams 💭)
+
+---
+
+**All credit goes to the original Tencent Hunyuan3D Team for this incredible work!**
+
+---
+
 <p align="center"> 
   <img src="https://github.com/user-attachments/assets/efb402a1-0b09-41e0-a6cb-259d442e76aa">
 
