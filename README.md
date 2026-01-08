@@ -1,9 +1,11 @@
 ![WhatsApp Image 2026-01-08 at 2 29 47 PM](https://github.com/user-attachments/assets/60b40c2e-8edf-4fcd-a9f6-5f35c6de2be1)
 
 
-## 3D image of myself lol
+## 3D image of myself and my cat after a kill lol
 
 <img width="427" height="432" alt="2" src="https://github.com/user-attachments/assets/ab45f799-ef2e-4372-82c4-b5c4a6ea5de1" />
+
+![WhatsApp Image 2026-01-08 at 4 50 49 PM](https://github.com/user-attachments/assets/423ce0de-e343-4c19-aaa2-b33c8164ceb8)
 
 
 ## 🛠️ My Adaptation Notes
