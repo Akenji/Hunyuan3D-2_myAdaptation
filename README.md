@@ -1,25 +1,25 @@
-[中文阅读](README_zh_cn.md)
-[日本語で読む](README_ja_jp.md)
+![WhatsApp Image 2026-01-08 at 2 29 47 PM](https://github.com/user-attachments/assets/60b40c2e-8edf-4fcd-a9f6-5f35c6de2be1)
 
----
+
+## 3D image of myself lol
+
+<img width="427" height="432" alt="2" src="https://github.com/user-attachments/assets/ab45f799-ef2e-4372-82c4-b5c4a6ea5de1" />
+
 
 ## 🛠️ My Adaptation Notes
 
-This is my adaptation of the amazing [Hunyuan3D-2.0](https://github.com/Tencent/Hunyuan3D-2) project by Tencent. After a journey through dependency hell, CUDA complications, and virtual environment adventures, I've managed to get it partially working! 
+This is my adaptation of the amazing [Hunyuan3D-2.0](https://github.com/Tencent/Hunyuan3D-2) project by Tencent. After a journey through dependency hell, CUDA complications, and virtual environment adventures, I've managed to get the 3D shape generation working using the Hunyuan3D-DiT model
 
-### What Works ✅
-- **Shape generation** - Successfully generating 3D meshes from images using the Hunyuan3D-DiT model
-- **Gradio web interface** - Running smoothly on `http://localhost:8080`
-- **CUDA acceleration** - PyTorch 2.9.1+cu130 playing nicely with my NVIDIA T600
+### Note
+The original implementation by Hunyuan has many more functions, which you can check out on [Their Website](https://3d.hunyuan.tencent.com/). I was only interested in the geometry/3D rendering part of their tool. This is a much "simpler" version, which can only generate bare meshes without textures
 
-### What Doesn't Work (Yet) ❌
-- **Texture generation** - The `custom_rasterizer` C++ extension refuses to compile without Visual Studio Build Tools and CUDA Toolkit properly installed
-- **Full pipeline** - Can only generate bare meshes without textures
 
 ### My Setup Constraints 
-**The GPU Situation:** I'm rocking an NVIDIA T600 Laptop GPU with a whopping 4GB of VRAM. The README cheerfully suggests 6GB minimum for shape generation, but we're out here living dangerously with `--low_vram_mode` and the smaller `Hunyuan3D-2mini` model. It's like trying to fit a luxury sedan in a compact parking spot - technically possible with enough determination and the right flags. 🚗💨
+**The GPU Situation:** I'm rocking an NVIDIA T600 Laptop GPU with a whopping 4GB of VRAM. The README cheerfully suggests 6GB minimum for shape generation, but we're out here living dangerously with `--low_vram_mode` and the smaller `Hunyuan3D-2mini` model. It's like trying to fit a luxury sedan in a compact parking spot - technically possible with enough determination and the right flags. 
 
-### How I Got It Running
+My laptop almost ran out of storage 🤣
+
+### Requirements
 
 1. **PyTorch Installation:**
    ```bash
@@ -47,7 +47,7 @@ This is my adaptation of the amazing [Hunyuan3D-2.0](https://github.com/Tencent/
 
 **All credit goes to the original Tencent Hunyuan3D Team for this incredible work!**
 
----
+<!--
 
 <p align="center"> 
   <img src="https://github.com/user-attachments/assets/efb402a1-0b09-41e0-a6cb-259d442e76aa">
@@ -334,10 +334,12 @@ Don't forget to visit [Hunyuan3D](https://3d.hunyuan.tencent.com) for quick use,
 - [x] ComfyUI
 - [x] Finetuning
 - [ ] TensorRT Version
+-->
 
 ## 🔗 BibTeX
+If you found this repository helpful, please cite our reports: 
 
-If you found this repository helpful, please cite our reports:
+(Hunyuan Reports👇🏻)
 
 ```bibtex
 @misc{lai2025hunyuan3d25highfidelity3d,
@@ -380,6 +382,7 @@ Thanks for the contributions of community members, here we have these great exte
 - [Hunyuan3D-2GP](https://github.com/deepbeepmeep/Hunyuan3D-2GP)
 - [Kaggle Notebook](https://github.com/darkon12/Hunyuan3D-2GP_Kaggle)
 
+<!--
 ## Acknowledgements
 
 We would like to thank the contributors to
@@ -396,3 +399,4 @@ exploration.
    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Tencent/Hunyuan3D-2&type=Date" />
  </picture>
 </a>
+-->
